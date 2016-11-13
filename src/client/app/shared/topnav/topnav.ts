@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
     moduleId: module.id,
     selector: 'top-nav',
@@ -26,4 +27,14 @@ export class TopNavComponent {
 		sidebar.toggleClass('sidebar-left-zero');
 		mainContainer.toggleClass('main-container-ml-zero');
 	}
+
+	searchClicked(event: Event)
+	{
+		alert('search clicked');
+		event.preventDefault();
+/*		
+        $('#search').addClass('open');
+        $('#search > form > input[type="search"]').focus();*/
+	}
+	
 }
