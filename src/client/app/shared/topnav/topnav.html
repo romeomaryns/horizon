@@ -3,7 +3,7 @@
         <a class="navbar-brand" [routerLink]="['/dashboard','/home']">Small Business App</a>
           <div id="wrap" class="pull-right">
                 <form action="javascript:;" autocomplete="on">
-                <input id="search" name="search" type="text" placeholder="What're we looking for ?"><i class="search-icon fa fa-search" id="search_submit" (click)="search(search)"></i>
+                    <input (keyup)="onKey($event)"  id="search" name="search" type="text" ><i class="search-icon fa fa-search" id="search_submit"></i>
                 </form>
             </div>
         <ul class="nav navbar-nav top-nav navbar-right pull-xs-right top-right-nav">

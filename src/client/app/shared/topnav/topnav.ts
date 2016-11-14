@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 
 export class TopNavComponent {
-	openSearch : boolean;
 
+	searchTerm = '';
 	changeTheme(color: string): void {
 		var link: any = $('<link>');
 		link
@@ -29,7 +29,13 @@ export class TopNavComponent {
 		mainContainer.toggleClass('main-container-ml-zero');
 	}
 
-	search(searchString:String) {
-		console.log(searchString);
+	onKey(event:any):void {
+		console.log(event.key);
+		console.log(event.target.value);
+		this.searchTerm = event.target.value ;
+		if(event.key == 'Enter'){
+			console.log('Enter pressed !!! value : ' + event.target.value);
+			console.log(this.searchTerm);
+		}
 	}
 }
