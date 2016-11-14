@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-
 @Component({
     moduleId: module.id,
     selector: 'top-nav',
@@ -8,6 +7,8 @@ import { Component } from '@angular/core';
 })
 
 export class TopNavComponent {
+	openSearch : boolean;
+
 	changeTheme(color: string): void {
 		var link: any = $('<link>');
 		link
@@ -28,13 +29,7 @@ export class TopNavComponent {
 		mainContainer.toggleClass('main-container-ml-zero');
 	}
 
-	searchClicked(event: Event)
-	{
-		alert('search clicked');
-		event.preventDefault();
-/*		
-        $('#search').addClass('open');
-        $('#search > form > input[type="search"]').focus();*/
+	search(searchString:String) {
+		console.log(searchString);
 	}
-	
 }
