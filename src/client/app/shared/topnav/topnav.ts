@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router} from '@angular/router';
 
 @Component({
     moduleId: module.id,
@@ -7,8 +8,11 @@ import { Component } from '@angular/core';
 })
 
 export class TopNavComponent {
-
 	searchTerm = '';
+
+	constructor(private router: Router) {
+		this.router = router;
+	}
 	changeTheme(color: string): void {
 		var link: any = $('<link>');
 		link
@@ -33,9 +37,10 @@ export class TopNavComponent {
 		console.log(event.key);
 		console.log(event.target.value);
 		this.searchTerm = event.target.value ;
-		if(event.key == 'Enter'){
+		if(event.key === 'Enter') {
 			console.log('Enter pressed !!! value : ' + event.target.value);
 			console.log(this.searchTerm);
+			this.router.navigate(['/dashboard','search',this.searchTerm]);
 		}
 	}
 }
